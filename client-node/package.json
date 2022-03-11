@@ -1,0 +1,66 @@
+{
+  "name": "client-node-ax",
+  "version": "1.0.0",
+  "description": "Client for cache in TypeScript o Javascript.",
+  "main": "dist/app.js",
+  "types": "dist/app.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json",
+    "build:old": "tsc --build",
+    "clean": "tsc --build --clean",
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "prestart": "npm run build",
+    "start": "node .",
+    "test": "jest --runInBand",
+    "testCoverage": "jest --coverage --detectOpenHandles --maxWorkers=50%",
+    "testOnlyChanged": "jest --listTests --onlyChanged --maxWorkers=50%",
+    "testSilent": "jest test/app.spec.js --silent --maxWorkers=50%",
+    "publish": "npm publish --access public"
+  },
+  "author": "jose.mejia",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josmejia2401/common-ax"
+  },
+  "keywords": [
+    "common-ax",
+    "aws",
+    "compatible with aws",
+    "aws crud",
+    "validation fields",
+    "general utils",
+    "dependency injection",
+    "exceptions custom"
+  ],
+  "bugs": {
+    "url": "https://github.com/josmejia2401/common-ax/issues"
+  },
+  "homepage": "https://github.com/josmejia2401/common-ax#readme",
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "<rootDir>/test/*.spec.ts"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/"
+    ]
+  },
+  "dependencies": {
+    "typescript": "^4.4.4",
+    "node-typescript": "^0.1.3",
+    "tslint": "^6.1.3",
+    "@types/node": "16.11.12"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.21",
+    "jest": "27.4.3",
+    "@types/jest": "27.0.3",
+    "ts-jest": "27.1.0"
+  }
+}
